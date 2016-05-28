@@ -1,5 +1,7 @@
 package models;
 
+import java.util.List;
+
 /**
  * Created by Christian on 5/27/16.
  */
@@ -8,7 +10,7 @@ public class User {
     private Integer id;
     private String firstName;
     private String lastName;
-    private Task tasks;
+    private List<Task> tasks;
 
     public Integer getId() {
         return id;
@@ -34,11 +36,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Task getTasks() {
+    public List<Task> getTasks() {
         return tasks;
     }
 
-    public void setTasks(Task tasks) {
+    public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
 
