@@ -1,0 +1,7 @@
+# directories
+.idea/
+target/
+
+# files
+*.iml
+.DS_Store
