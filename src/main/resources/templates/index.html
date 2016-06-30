@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head lang="en">
+    <title>Task Manager Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}"/>
+    <script src="../static/js/jquery-2.2.4.min.js" th:src="@{js/jquery-2.2.4.min.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <p>Hello World. This is a Task Manager Application!</p>
+            <p>
+                Click <a th:href="@{/details}">here</a> for more details
+            </p>
+        </div>
+
+        <!-- Large modal -->
+        <button class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg">New Task</button>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <h5>Some content is written here.</h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

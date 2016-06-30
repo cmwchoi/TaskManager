@@ -1,6 +1,7 @@
-package dao;
+package com.cmwchoi.dao;
 
-import models.User;
+
+import com.cmwchoi.models.User;
 
 /**
  * Created by Christian on 5/27/16.
@@ -11,5 +12,5 @@ public interface UserDao {
     User get(Integer id);
     void update(User user);
     void delete(Integer id);
-    
+
 }
