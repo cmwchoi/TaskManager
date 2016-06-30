@@ -1,6 +1,6 @@
-package dao;
+package com.cmwchoi.dao;
 
-import models.Task;
+import com.cmwchoi.models.Task;
 
 import java.util.List;
 

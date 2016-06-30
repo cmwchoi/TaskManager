@@ -1,4 +1,4 @@
-package models;
+package com.cmwchoi.models;
 
 import java.util.List;
 
