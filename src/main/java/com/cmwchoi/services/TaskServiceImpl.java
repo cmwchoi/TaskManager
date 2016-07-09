@@ -1,18 +1,27 @@
-package com.cmwchoi.dao;
+package com.cmwchoi.services;
 
 import com.cmwchoi.models.Task;
-
+import com.cmwchoi.repositories.TaskRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by Christian on 6/28/16.
  */
-public class TaskDaoImpl implements TaskDao {
+@Service
+public class TaskServiceImpl implements TaskService {
 
-    private List<Task> tasks = new ArrayList<Task>();
+    private TaskRepository taskRepository;
+
+    private List<Task> tasks = new ArrayList<>();
     private int nextId = 0;
+
+    @Autowired
+    public void setTaskRepository(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
 
     @Override
     public Task create(Task task) {
@@ -45,7 +54,7 @@ public class TaskDaoImpl implements TaskDao {
     }
 
     @Override
-    public List<Task> findTasksByUser(Integer userId) {
-        return tasks.stream().filter(t -> t.getUserId().equals(userId)).collect(Collectors.toList());
+    public List<Task> getAllTasks() {
+        return tasks;
     }
 }

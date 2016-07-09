@@ -1,17 +1,24 @@
 package com.cmwchoi.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
  * Created by Christian on 5/27/16.
  */
+@Entity
 public class Task {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private Integer userId;
-    private String taskName;
+    private String description;
     private boolean completed;
-    private LocalDateTime created;
+    private LocalDateTime createdAt;
+
+//    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private LocalDateTime deadline;
 
     public Integer getId() {
@@ -22,20 +29,12 @@ public class Task {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public boolean isCompleted() {
@@ -46,12 +45,12 @@ public class Task {
         this.completed = completed;
     }
 
-    public LocalDateTime getCreated() {
-        return created;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated(LocalDateTime created) {
-        this.created = created;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     public LocalDateTime getDeadline() {
@@ -61,5 +60,4 @@ public class Task {
     public void setDeadline(LocalDateTime deadline) {
         this.deadline = deadline;
     }
-
 }
